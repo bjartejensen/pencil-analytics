@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pencil-analytics"
+    }
+  },
+  "defaultProject": "pencil-analytics",
+  "cli": {
+    "analytics": "aee606cf-2463-4634-8f1b-a4ced0eb660d"
+  }
 }
