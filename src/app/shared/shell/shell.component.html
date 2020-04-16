@@ -25,7 +25,7 @@
         id="horisontal-nav"
         *ngIf="!(isHandset$ | async)">
                 
-                <a mat-button>Aktuelt</a>
+                <a routerLink="login" mat-button>Aktuelt</a>
                 <a mat-button >Kollektioner</a>
                 <a mat-button >Bryllup</a>
                 <a mat-button>Shop</a>
@@ -35,7 +35,7 @@
     </div> 
 
         <mat-menu class="mat-menu" #menuAbout="matMenu">
-                <a mat-menu-item >
+                <a mat-menu-item  >
                     <span>Om Louise Rought</span>
                 </a>
                 <a mat-menu-item >
