@@ -1,0 +1,98 @@
+@import "../../../styles.scss";
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  overflow: hidden;
+  //background: pink;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.container-fluid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.text-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: rgb(233, 207, 159);
+  width: 100%;
+
+  h1 {
+    @include header;
+    width: 85%;
+    padding: 2%;
+    background: $accent;
+    margin-left: 10%;
+  }
+
+  h4 {
+    @include sub-header;
+    width: 75%;
+    padding: 0% 3%;
+    margin-left: 10%;
+  }
+
+  .pan-button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 200px;
+    transition: 200ms all ease;
+    //outline: $text-color solid 5px;
+    border-radius: 2%;
+    background: $primary;
+    margin: 0% auto;
+    margin-top: 5%;
+
+    a {
+      @include menu-item;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      height: 200%;
+      width: 100%;
+      overflow: hidden;
+      color: white;
+    }
+  }
+}
+
+.image-section {
+  position: relative;
+  display: flex;
+  //background: orangered;
+  width: 100%;
+
+  img {
+    height: 60%;
+    width: 70%;
+    object-fit: contain;
+    margin: auto;
+  }
+}
+
+#why {
+  background: gray;
+}

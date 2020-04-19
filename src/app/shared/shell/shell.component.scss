@@ -4,18 +4,28 @@
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
-  background: pink;
+  //background: pink;
 
   &:focus {
     outline: none !important;
   }
 }
 
+.horisontal-menu-left,
 .horisontal-menu-right {
   display: flex;
   flex-direction: row;
   margin: auto;
   justify-content: flex-end;
   width: 100%;
-  //position: fixed;
+
+  a + a {
+    margin-left: 2%;
+  }
+}
+
+.sub-menu {
+  &::after {
+    content: "";
+  }
 }

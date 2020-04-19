@@ -20,14 +20,29 @@
 
     <span class="fill-space"></span>
 
+    <div class="horisontal-menu-left"
+        *ngIf="!(isHandset$ | async)">
+
+        <a mat-button href="">Why Pencil</a>
+        <a class="sub-menu" mat-button [matMenuTriggerFor]="menuAnalytics" >Analytics</a>
+        <a mat-button href="">Pricing</a>
+        <a mat-button href="">Resources</a>
+
+    </div>
+
     <div class="horisontal-menu-right"
         id="horisontal-nav"
         *ngIf="!(isHandset$ | async)">
-                
+
                
                 <a *ngIf="auth.isLoggedOut$ | async" 
                    (click)="gotoLogin()"
-                    mat-button>Login
+                    mat-raised-button color="primary">Log In
+                </a>
+
+                <a *ngIf="auth.isLoggedOut$ | async" 
+                   (click)="gotoLogin()"
+                    mat-raised-button color="accent">Sign Up Free
                 </a>
                 
                 <a *ngIf="auth.isLoggedIn$ | async" 
@@ -36,9 +51,23 @@
                 
                 <a mat-flat-button id="menu-handcrafted"
                     *ngIf="auth.isLoggedIn$ | async"  
-                        [matMenuTriggerFor]="menuAbout">Profile</a> 
+                        [matMenuTriggerFor]="menuAbout">Profile
+                </a> 
             
     </div> 
+
+
+        <mat-menu class="mat-menu" #menuAnalytics="matMenu">
+                <a mat-menu-item  >
+                    <span>Social Media</span>
+                </a>
+                <a mat-menu-item >
+                    <span>Events</span>
+                </a>
+                <a mat-menu-item >
+                    <span>Survey</span>
+                </a>
+        </mat-menu> 
 
         <mat-menu class="mat-menu" #menuAbout="matMenu">
                 <a mat-menu-item  >
@@ -61,7 +90,7 @@
 
 </mat-toolbar>
 
-    <ng-content>
+    <ng-content style="background:orange" >
         
     </ng-content>
 

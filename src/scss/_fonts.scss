@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,400,700|Work+Sans:300,400,700|Lora:400,700&display=swap'");
+
+$menu-font: "Poppins", sans-serif;
+$text-font: "Lora", serif;
+$header-font: "Work Sans", sans-serif;
+
+@mixin menu-item {
+  font-family: $menu-font;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: $text-color;
+}
+
+@mixin header {
+  font-family: $header-font;
+  font-weight: 700;
+  font-size: 2.95rem;
+  line-height: 3.25rem;
+  color: $text-color;
+}
+
+@mixin sub-header {
+  font-family: $text-font;
+  font-size: 1.15rem;
+  line-height: 1.2rem;
+  font-weight: 400;
+  color: $text-color;
+}
+
+@mixin paragraph {
+  font-family: $text-font;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1rem;
+  color: $text-color;
+}

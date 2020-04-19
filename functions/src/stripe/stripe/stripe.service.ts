@@ -93,6 +93,7 @@ export class StripeService {
     }
   }
 
+  //HAHAH
   private async onCheckoutSessionCompleted(session: any) {
     //"client_reference_id": "LqpARIMVlfHxxudYFDB8" this is purchase session
     const purchaseSessionId = session.client_reference_id;
@@ -103,7 +104,7 @@ export class StripeService {
     const email = await this.getCustomerEmail(stripeCustomerId);
     console.log("Email: " + email);
 
-    //The Pencil UID
+    //The Pencil UID (dette er en test)
     const uid = session.uid;
     console.log("uid: " + uid);
 
