@@ -1,6 +1,5 @@
-<mat-sidenav-container style="height:100vh;width:100%;background:green">
-  <mat-sidenav style="background:red" >Start</mat-sidenav>
-  <mat-sidenav style="background:blue" position="end">End</mat-sidenav>
+<mat-sidenav-container style="height:100vh;width:100%">
+
   
     <!-- TRANSCLUSION -->
 
@@ -14,7 +13,7 @@
         class="horisontal-navbar-logo-container">
             <div id="logo-lrj" >
                 <div class="logo-lrj logo-desktop">
-                    <h4 style="background:transparent">Louise Rought</h4>                
+                    <h4 style="background:transparent">Pencil</h4>                
                 </div>
             </div>
     </div>
@@ -25,12 +24,19 @@
         id="horisontal-nav"
         *ngIf="!(isHandset$ | async)">
                 
-                <a routerLink="login" mat-button>Aktuelt</a>
-                <a mat-button >Kollektioner</a>
-                <a mat-button >Bryllup</a>
-                <a mat-button>Shop</a>
-                <a mat-flat-button id="menu-handcrafted" 
-                        [matMenuTriggerFor]="menuAbout">Handcrafted</a> 
+               
+                <a *ngIf="auth.isLoggedOut$ | async" 
+                   (click)="gotoLogin()"
+                    mat-button>Login
+                </a>
+                
+                <a *ngIf="auth.isLoggedIn$ | async" 
+                    mat-button (click)="logout()" >Logout
+                </a>
+                
+                <a mat-flat-button id="menu-handcrafted"
+                    *ngIf="auth.isLoggedIn$ | async"  
+                        [matMenuTriggerFor]="menuAbout">Profile</a> 
             
     </div> 
 

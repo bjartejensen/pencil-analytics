@@ -1,7 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 
-import * as firebaseui from "firebaseui";
-import * as firebase from "firebase/app";
+import { UserprofileService } from "src/services/userprofile.service";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AuthStore } from "src/services/auth.store";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -9,7 +12,36 @@ import * as firebase from "firebase/app";
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  form: FormGroup;
 
-  ngOnInit(): void {}
+  constructor(
+    private fb: FormBuilder,
+    public auth: AuthStore,
+    private router: Router
+  ) {
+    this.form = this.fb.group({
+      email: ["bjartejensen@gmail.com", [Validators.required]],
+      password: ["bmj150774", [Validators.required]],
+    });
+  }
+
+  ngOnInit() {}
+
+  signout() {}
+
+  login() {
+    const val = this.form.value;
+    debugger;
+
+    this.auth.login(val.email, val.password).subscribe(
+      () => {
+        debugger;
+        this.router.navigateByUrl("/dashboard");
+      },
+      (err) => {
+        debugger;
+        alert("Login failed!");
+      }
+    );
+  }
 }

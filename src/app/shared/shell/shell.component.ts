@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Observable, of, from } from "rxjs";
 import { map, shareReplay, filter } from "rxjs/operators";
+import { AuthStore } from "src/services/auth.store";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-shell",
@@ -22,7 +24,19 @@ export class ShellComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router,
+    public auth: AuthStore
+  ) {}
 
   ngOnInit(): void {}
+
+  gotoLogin() {
+    this.router.navigateByUrl("/login");
+  }
+
+  logout() {
+    this.auth.logout();
+  }
 }

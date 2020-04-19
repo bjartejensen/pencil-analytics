@@ -11,6 +11,19 @@ const routes: Routes = [
     path: "login",
     loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
   },
+  {
+    path: "dashboard",
+    loadChildren: () =>
+      import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
+  },
+  {
+    path: "login/subscription",
+    loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
+  },
+  {
+    path: "subscription/stripe-checkout",
+    loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
+  },
 ];
 
 @NgModule({
