@@ -1,31 +1,28 @@
 @import "../../../styles.scss";
 
 * {
-  padding: 0%;
   margin: 0%;
+  padding: 0%;
   box-sizing: border-box;
-  overflow: hidden;
-  //background: pink;
 
   &:focus {
     outline: none !important;
   }
 }
-
 .container-fluid {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  margin: 0%;
+  //background: orange;
 }
 
-section {
+.section-container {
   position: relative;
   display: flex;
-  flex-direction: row;
   width: 100%;
-  height: 80vh;
-  overflow: hidden;
+  height: 100vh;
+  margin-bottom: 5%;
 }
 
 .text-section {
@@ -94,5 +91,5 @@ section {
 }
 
 #why {
-  background: gray;
+  background: transparent;
 }
